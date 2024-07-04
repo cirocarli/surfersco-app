@@ -15,8 +15,8 @@ class SendMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public $name, $email, $birthPlace, $birthday, $phone, $company, $mailMessage;
-    public function __construct($name, $email, $birthPlace, $birthday, $phone, $company, $subject,$mailMessage)
+    public $name, $email, $birthPlace, $birthday, $phone, $company, $mailMessage, $url;
+    public function __construct($name, $email, $birthPlace, $birthday, $phone, $company, $subject,$mailMessage, $url)
     {
         $this->name = $name;
         $this->email = $email;
@@ -26,6 +26,7 @@ class SendMail extends Mailable
         $this->phone = $phone;
         $this->company = $company;
         $this->mailMessage = $mailMessage;
+        $this->url = $url;
     }
     /**
      * Get the message envelope.
@@ -33,7 +34,7 @@ class SendMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            // subject: 'Sandroft Website Mail',
+            // subject: 'https://example.com/',
             subject: $this->subject,
         );
     }

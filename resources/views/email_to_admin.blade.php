@@ -1,11 +1,18 @@
 @component('mail::message')
-# Name: {{ $name }}
-# Email: {{ $email }}<br>
-Subject: {{ $sub }} <br><br>
-Message:<br> {{ $mailMessage }}
-{{ - @component('mail::button', '$url')
+# New Post Created
+
+**Name:** {{ $name }}<br>
+**Email:** {{ $email }}<br>
+**Birthplace:** {{ $birthPlace }}<br>
+**Birthday:** {{ $birthday }}<br>
+**Phone:** {{ $phone }}<br>
+**Company:** {{ $company }}<br><br>
+**Message:**<br> {{ $mailMessage }}
+
+@component('mail::button', ['url' => $url])
 Visit Our Website
-@endcomponent - }}
-Thanks,
+@endcomponent
+
+Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

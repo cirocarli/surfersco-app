@@ -1,10 +1,14 @@
 @component('mail::message')
 # Hi {{ $name }},
-{{ - # {{ $senderMessage }} - }}
-Receive your email. I will try quicly answer.
+
+{{ $senderMessage }}
+
+Received your email. I will try to quickly answer.
+
 @component('mail::button', ['url' => $mailData['url']])
 Visit Our Website
 @endcomponent
-Thanks,
+
+Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
